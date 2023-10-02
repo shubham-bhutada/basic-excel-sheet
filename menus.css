@@ -1,0 +1,39 @@
+.menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.active-option {
+  background-color: #bdbdbd;
+}
+
+.menus > div {
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+
+.menus > div:hover {
+  background-color: #bdbdbd;
+}
+
+#textSize {
+    width: 35px;
+    text-align: center;
+    padding: 5px;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#fontFamilyDropdown {
+    padding: 5px;
+    outline: none;
+    margin-right: 10px;
+}

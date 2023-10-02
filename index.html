@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menus.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="tool">
+      <div class="dropdown">
+        <button class="dropbtn">File</button>
+        <div class="dropdown-content">
+          <a href="#">New</a>
+          <a href="#">Open</a>
+          <a href="#">Save</a>
+          <a href="#">Save As</a>
+        </div>
+      </div>
+
+      <div class="dropdown active">
+        <button class="dropbtn">Home</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Insert</button>
+        <div class="dropdown-content">
+          <a href="#">Insert Row</a>
+          <a href="#">Insert Column</a>
+          <a href="#">Insert Image</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Layout</button>
+        <div class="dropdown-content">
+          <a href="#">Format Cells</a>
+          <a href="#">Merge Cells</a>
+          <a href="#">Cell Borders</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Help</button>
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div id="options">
+      <div class="menus">
+        <select id="fontFamilyDropdown" onchange="onChangeFontFamily(this)">
+          <option value='"Times New Roman"'>Times New Roman</option>
+          <option value="Arial">Arial</option>
+          <option value="Monaco">Monaco</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Courier">Courier</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Impact">Impact</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Monospace">Monospace</option>
+        </select>
+        <input
+          type="text"
+          id="textSize"
+          value="16px"
+          onchange="onChangeTextSize(this)"
+        />
+        <div id="bold" onclick="onClickBold(this)">
+          <span class="material-icons"> format_bold </span>
+        </div>
+        <div id="italic" onclick="onClickItalic(this)">
+          <span class="material-icons"> format_italic </span>
+        </div>
+        <div id="underlined" onclick="onClickUnderline(this)">
+          <span class="material-icons"> format_underlined </span>
+        </div>
+        <div
+          class="material-icons active-option text-align"
+          data-value="start"
+          onclick="onClickTextAlign(this)"
+        >
+          format_align_left
+        </div>
+        <div
+          class="material-icons text-align"
+          data-value="center"
+          onclick="onClickTextAlign(this)"
+        >
+          format_align_center
+        </div>
+        
+        <div
+          class="material-icons text-align"
+          data-value="right"
+          onclick="onClickTextAlign(this)"
+        >
+          format_align_right
+        </div>
+
+        <div id="text-color" style="padding-left: 15px">
+          <label for="text-color-picker">
+            <span class="material-icons"> format_color_text </span>
+          </label>
+          <input
+            onchange="onChangeTextColor(this)"
+            type="color"
+            id="text-color-picker"
+            style="visibility: hidden; height: 0; width: 0"
+          />
+        </div>
+
+        <div id="bg-color" style="padding-left: 17px">
+          <label for="bg-color-picker">
+            <span class="material-icons"> format_color_fill </span>
+          </label>
+          <input
+            onchange="onChangeBgColor(this)"
+            type="color"
+            id="bg-color-picker"
+            style="visibility: hidden; height: 0; width: 0"
+          />
+        </div>
+      </div>
+
+      <span id="active-cell">null</span>
+    </div>
+    <main style="width: 100vw; margin: auto; height: 100vh; overflow: scroll">
+      <div id="header">
+        <b style="position: sticky; left: 0; top: 0; background-color: white; min-width: 50px;"
+          >S.No.</b
+        >
+      </div>
+      <section id="body"></section>
+    </main>
+
+    <script src="./options.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
